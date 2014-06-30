@@ -19,6 +19,8 @@
 		FEA6B4E81960C35600757561 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA6B4D01960C35600757561 /* UIKit.framework */; };
 		FEA6B4F01960C35600757561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEA6B4EE1960C35600757561 /* InfoPlist.strings */; };
 		FEA6B4F21960C35600757561 /* codepath_canvasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA6B4F11960C35600757561 /* codepath_canvasTests.m */; };
+		FEA6B4FE1960C47700757561 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA6B4FC1960C47700757561 /* mainViewController.m */; };
+		FEA6B4FF1960C47700757561 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA6B4FD1960C47700757561 /* mainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		FEA6B4ED1960C35600757561 /* codepath-canvasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "codepath-canvasTests-Info.plist"; sourceTree = "<group>"; };
 		FEA6B4EF1960C35600757561 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FEA6B4F11960C35600757561 /* codepath_canvasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = codepath_canvasTests.m; sourceTree = "<group>"; };
+		FEA6B4FB1960C47700757561 /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
+		FEA6B4FC1960C47700757561 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
+		FEA6B4FD1960C47700757561 /* mainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,9 @@
 				FEA6B4DC1960C35600757561 /* AppDelegate.m */,
 				FEA6B4DE1960C35600757561 /* Images.xcassets */,
 				FEA6B4D31960C35600757561 /* Supporting Files */,
+				FEA6B4FB1960C47700757561 /* mainViewController.h */,
+				FEA6B4FC1960C47700757561 /* mainViewController.m */,
+				FEA6B4FD1960C47700757561 /* mainViewController.xib */,
 			);
 			path = "codepath-canvas";
 			sourceTree = "<group>";
@@ -191,6 +199,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Mario C. Delgado Jr.";
 				TargetAttributes = {
+					FEA6B4C81960C35600757561 = {
+						DevelopmentTeam = 4MVAASZV55;
+					};
 					FEA6B4E31960C35600757561 = {
 						TestTargetID = FEA6B4C81960C35600757561;
 					};
@@ -221,6 +232,7 @@
 			files = (
 				FEA6B4D71960C35600757561 /* InfoPlist.strings in Resources */,
 				FEA6B4DF1960C35600757561 /* Images.xcassets in Resources */,
+				FEA6B4FF1960C47700757561 /* mainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA6B4FE1960C47700757561 /* mainViewController.m in Sources */,
 				FEA6B4DD1960C35600757561 /* AppDelegate.m in Sources */,
 				FEA6B4D91960C35600757561 /* main.m in Sources */,
 			);
@@ -357,10 +370,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "codepath-canvas/codepath-canvas-Prefix.pch";
 				INFOPLIST_FILE = "codepath-canvas/codepath-canvas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -370,10 +386,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "codepath-canvas/codepath-canvas-Prefix.pch";
 				INFOPLIST_FILE = "codepath-canvas/codepath-canvas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
