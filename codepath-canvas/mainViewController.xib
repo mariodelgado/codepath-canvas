@@ -100,27 +100,27 @@
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="04i-kG-7ya" userLabel="bldg2">
             <connections>
-                <action selector="onbldg2:" destination="-1" id="BI2-F2-R7h"/>
+                <action selector="onbldg1:" destination="-1" id="aUZ-WP-VZO"/>
             </connections>
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="Wk6-P0-BzY" userLabel="bldg3">
             <connections>
-                <action selector="onbldg3:" destination="-1" id="9vH-w7-LrR"/>
+                <action selector="onbldg1:" destination="-1" id="Qgf-y7-Rwi"/>
             </connections>
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="TnK-if-eey" userLabel="bldg4">
             <connections>
-                <action selector="onbldg4:" destination="-1" id="TIn-eL-yi1"/>
+                <action selector="onbldg1:" destination="-1" id="74O-Wj-Gyx"/>
             </connections>
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="Pvm-zq-faO" userLabel="bldg5">
             <connections>
-                <action selector="onbldg5:" destination="-1" id="DUW-7u-9d5"/>
+                <action selector="onbldg1:" destination="-1" id="KgH-rE-mdx"/>
             </connections>
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="2G5-rW-24P" userLabel="bldg6">
             <connections>
-                <action selector="onbldg6:" destination="-1" id="lsy-tq-LCS"/>
+                <action selector="onbldg1:" destination="-1" id="eft-L3-Z7c"/>
             </connections>
         </panGestureRecognizer>
         <panGestureRecognizer minimumNumberOfTouches="1" id="95u-VN-uA7" userLabel="Scroll Pan">

@@ -27,7 +27,7 @@
 - (IBAction)onbldg6:(id)sender;
 
 @property (assign, nonatomic) CGPoint offset;
-
+@property (nonatomic, strong) UIImageView * createdImageView;
 
 @end
 
@@ -48,6 +48,8 @@
     _scrollView.contentSize = CGSizeMake( 520 , self.scrollView.frame.size.height) ;
     self.scrollView.center = CGPointMake(self.scrollView.center.x, 600);
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    
+
 
     
 
@@ -55,7 +57,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
+    return NO;
 }
 
 
@@ -118,15 +120,28 @@
     if (sender.state == UIGestureRecognizerStateBegan) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:originalImageView.frame];
         imageView.image = originalImageView.image;
+        [imageView setUserInteractionEnabled:YES];
+        [imageView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(imgDidPan:)]];
+        self.createdImageView = imageView;
+        self.createdImageView.center = point1;
+
         [self.canvasView addSubview:imageView];
+        
 
 
 
     } else if (sender.state == UIGestureRecognizerStateChanged) {
-        CGPoint newPoint1 = CGPointMake(point1.x - self.offset.x, point1.y -self.offset.y);
-        imageView.center = newPoint1;
+    self.offset = CGPointMake(point1.x - self.createdImageView.center.x, point1.y - self.createdImageView.center.y);
+        self.createdImageView.center = point1;
+
         
     } else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (point1.y <470){
+            
+            self.createdImageView.center = point1;
+        } else {
+            [self.createdImageView removeFromSuperview];
+        }
     }
 
 
@@ -153,4 +168,19 @@
 
 - (IBAction)onbldg6:(id)sender {
 }
+
+- (void)imgDidPan:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self.view];
+
+    if(sender.state == UIGestureRecognizerStateChanged) {
+        //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
+        
+        sender.view.center = CGPointMake(sender.view.center.x + translation.x, sender.view.center.y + translation.y);
+        [sender setTranslation:CGPointMake(0, 0) inView:self.view];
+        
+    } if (sender.state == UIGestureRecognizerStateEnded) {
+        //UIImageView *view;
+    }
+}
+
 @end
